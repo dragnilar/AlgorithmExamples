@@ -1,4 +1,4 @@
-﻿namespace Trees_Core_DotNetFull.Classes
+﻿namespace Trees_Core_DotNetFull.BinaryTreeClasses
 {
     public enum TraversalMethod
     {

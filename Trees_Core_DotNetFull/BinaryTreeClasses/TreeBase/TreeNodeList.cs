@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace Trees_Core_DotNetFull.Classes.TreeBase
+namespace Trees_Core_DotNetFull.BinaryTreeClasses.TreeBase
 {
     /// <summary>
     /// A collection of tree node lists; inherits from System.Collections.ObjectModel.Collection to provide basic collection functionality.

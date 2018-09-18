@@ -1,4 +1,4 @@
-﻿namespace Trees_Core_DotNetFull.Classes.TreeBase
+﻿namespace Trees_Core_DotNetFull.BinaryTreeClasses.TreeBase
 {
     /// <summary>
     /// A tree node that stores data and also houses a TreeNodeList that contains its children

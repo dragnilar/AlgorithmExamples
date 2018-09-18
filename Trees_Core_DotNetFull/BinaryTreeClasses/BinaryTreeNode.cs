@@ -1,6 +1,6 @@
-﻿using Trees_Core_DotNetFull.Classes.TreeBase;
+﻿using Trees_Core_DotNetFull.BinaryTreeClasses.TreeBase;
 
-namespace Trees_Core_DotNetFull.Classes
+namespace Trees_Core_DotNetFull.BinaryTreeClasses
 {
     /// <summary>
     ///     A binary tree node that provides the ability to store a specified data type as well as left/right child nodes.

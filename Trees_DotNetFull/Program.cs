@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
-using Trees_Core_DotNetFull.Classes;
+using Trees_Core_DotNetFull.BinaryTreeClasses;
 
 namespace Trees_DotNetFull
 {
@@ -36,9 +36,9 @@ namespace Trees_DotNetFull
 
 
 
-        private static BinarySearchTree<int> BuildTreeWith12Values()
+        private static Trees_Core_DotNetFull.BinaryTreeClasses.BinarySearchTree<int> BuildTreeWith12Values()
         {
-            var binaryTree = new BinarySearchTree<int>();
+            var binaryTree = new Trees_Core_DotNetFull.BinaryTreeClasses.BinarySearchTree<int>();
             for (int i = 1; i <= 12; i++)
             {
                 binaryTree.AddNewNode(i);
@@ -47,7 +47,7 @@ namespace Trees_DotNetFull
             return binaryTree;
         }
 
-        private static void RunTreeContainsTest(BinarySearchTree<int> tree ,int valueToTest)
+        private static void RunTreeContainsTest(Trees_Core_DotNetFull.BinaryTreeClasses.BinarySearchTree<int> tree ,int valueToTest)
         {
             Console.WriteLine($"Testing to see if the binary tree contains int value {valueToTest}");
             var result = tree.ContainsData(valueToTest);

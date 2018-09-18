@@ -41,11 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\BinarySearchTree.cs" />
-    <Compile Include="Classes\BinaryTreeNode.cs" />
-    <Compile Include="Classes\TraversalMethod.cs" />
-    <Compile Include="Classes\TreeBase\TreeNode.cs" />
-    <Compile Include="Classes\TreeBase\TreeNodeList.cs" />
+    <Compile Include="BinaryTreeClasses\BinarySearchTree.cs" />
+    <Compile Include="BinaryTreeClasses\BinaryTreeNode.cs" />
+    <Compile Include="BinaryTreeClasses\TraversalMethod.cs" />
+    <Compile Include="BinaryTreeClasses\BinarySearchTreeMethods.cs" />
+    <Compile Include="BinaryTreeClasses\TreeBase\TreeNode.cs" />
+    <Compile Include="BinaryTreeClasses\TreeBase\TreeNodeList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
