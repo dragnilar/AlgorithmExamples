@@ -15,14 +15,30 @@ namespace Trees_DotNetFull
             var tree = BuildTreeWithXValues(amountToUse);
             Console.WriteLine($"Performing 20 searches on the tree");
             var randomizer = new Random(DateTime.Now.Millisecond);
-            var randomInt = randomizer.Next(1, 25);
-            var maxValue = randomInt * 2;
+            var maxValue = amountToUse * 2;
             for (int i = 1; i <= 20; i++)
             {
-                randomInt = randomizer.Next(1, maxValue);
+                var randomInt = randomizer.Next(1, maxValue);
                 RunTreeContainsTest(tree, randomInt);
             }
         }
+
+        public void RunExampleTwo(int amountToUse)
+        {
+            Console.WriteLine($"Building a tree with {amountToUse} values in it");
+            var tree = BuildTreeWithXValues(amountToUse);
+            Console.WriteLine("Enter a number of nodes to delete from the tree between 1 and 20");
+            var input = ConsoleUtilities.GetInputLessThanXFromUser(21);
+            var randomizer = new Random(DateTime.Now.Millisecond);
+            for (int i = 1; i <= input; i++)
+            {
+                var randomInt = randomizer.Next(1, input);
+                RunDeleteTest( tree, randomInt);
+            }
+
+        }
+
+
 
 
         private BinarySearchTree<int> BuildTreeWithXValues(int x)
@@ -45,6 +61,20 @@ namespace Trees_DotNetFull
             Console.WriteLine(containsResult
                 ? $"The tree contains the value of {value}."
                 : $"The tree does not contain the value of {value}.");
+        }
+
+        private void RunDeleteTest(BinarySearchTree<int> tree, int randomInt)
+        {
+            Console.WriteLine($"Attempting to delete node with value of {randomInt} from tree");
+            var deleteResult = tree.DeleteNode(randomInt);
+            OutPutDeleteTestResult(deleteResult, randomInt);
+        }
+
+        private void OutPutDeleteTestResult(bool deleteResult, int value)
+        {
+            Console.WriteLine(deleteResult
+                ? $"Successfully deleted {value} from tree."
+                : $"The tree does not contain the value of {value}; it was not deleted.");
         }
     }
 }

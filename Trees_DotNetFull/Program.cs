@@ -9,40 +9,31 @@ namespace Trees_DotNetFull
         private static void Main(string[] args)
         {
             var stopWatch = new Stopwatch();
-            Console.WriteLine("Running binary tree search examples.");
-            stopWatch.Start();
-            var amountToUse = GetInputFromUser();
-            new BinaryTreeSearchExamples().RunExampleOne(amountToUse);
-            stopWatch.Stop();
-            Console.WriteLine($"Time it took to run example: {stopWatch.Elapsed.Milliseconds} MS");
+            Console.WriteLine("Running binary tree search examples.\n Note that all examples will use trees of less than 1000 nodes to save time.");
+            RunExampleOne(stopWatch);
+            RunExampleTwo(stopWatch);
             Console.WriteLine("Ending examples, press any key to exit.");
             Console.ReadKey();
         }
 
 
-        private static int GetInputFromUser()
+
+        private static void RunExampleOne(Stopwatch stopWatch)
         {
-
-            var returnInteger = 0;
-            var parseSuccessful = false;
-            var numberIsLessThan1000 = false;
-
-            while (!parseSuccessful || !numberIsLessThan1000)
-            {
-                Console.WriteLine("Input a number less than 1000 to use for the example(s) and press enter.\n" +
-                                  "We will not be using a number greater than that amount due to the amount of time it would take to build the tree...");
-                var input = Console.ReadLine();
-                parseSuccessful = Int32.TryParse(input, out returnInteger);
-                numberIsLessThan1000 = returnInteger < 1000;
-                if (!parseSuccessful || !numberIsLessThan1000)
-                {
-                    Console.Clear();
-                }
-            }
-            return returnInteger;
+            stopWatch.Start();
+            var amountToUse = ConsoleUtilities.GetInputLessThanXFromUser();
+            new BinaryTreeSearchExamples().RunExampleOne(amountToUse);
+            stopWatch.Stop();
+            Console.WriteLine($"Time it took to run example: {stopWatch.Elapsed.Milliseconds} MS");
         }
 
-
-
+        private static void RunExampleTwo(Stopwatch stopWatch)
+        {
+            stopWatch.Start();
+            var amountToUse = ConsoleUtilities.GetInputLessThanXFromUser();
+            new BinaryTreeSearchExamples().RunExampleTwo(amountToUse);
+            stopWatch.Stop();
+            Console.WriteLine($"Time it took to run example: {stopWatch.Elapsed.Milliseconds} MS");
+        }
     }
 }
