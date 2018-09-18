@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Trees_DotNetFull")]
+[assembly: AssemblyTitle("Trees_Core_DotNetFull")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Trees_DotNetFull")]
+[assembly: AssemblyProduct("Trees_Core_DotNetFull")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("101cece4-d334-45d6-bd93-7d1e34f0e05f")]
+[assembly: Guid("8d9145e8-6b79-42e1-8754-d075106d4b62")]
 
 // Version information for an assembly consists of the following four values:
 //

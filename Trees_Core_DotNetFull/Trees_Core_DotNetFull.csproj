@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{101CECE4-D334-45D6-BD93-7D1E34F0E05F}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Trees_DotNetFull</RootNamespace>
-    <AssemblyName>Trees_DotNetFull</AssemblyName>
+    <ProjectGuid>{8D9145E8-6B79-42E1-8754-D075106D4B62}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Trees_Core_DotNetFull</RootNamespace>
+    <AssemblyName>Trees_Core_DotNetFull</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,17 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Classes\BinarySearchTree.cs" />
+    <Compile Include="Classes\BinaryTreeNode.cs" />
+    <Compile Include="Classes\TraversalMethod.cs" />
+    <Compile Include="Classes\TreeBase\TreeNode.cs" />
+    <Compile Include="Classes\TreeBase\TreeNodeList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Trees_Core_DotNetFull\Trees_Core_DotNetFull.csproj">
-      <Project>{8d9145e8-6b79-42e1-8754-d075106d4b62}</Project>
-      <Name>Trees_Core_DotNetFull</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
