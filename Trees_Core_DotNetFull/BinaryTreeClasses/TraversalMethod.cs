@@ -2,7 +2,7 @@
 {
     public enum TraversalMethod
     {
-        Perorder,
+        PreOrder,
         Inorder,
         Postorder
     }

@@ -1,4 +1,7 @@
-﻿using Trees_Core_DotNetFull.BinaryTreeClasses.TreeBase;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using Trees_Core_DotNetFull.Annotations;
+using Trees_Core_DotNetFull.BinaryTreeClasses.TreeBase;
 
 namespace Trees_Core_DotNetFull.BinaryTreeClasses
 {
@@ -42,7 +45,7 @@ namespace Trees_Core_DotNetFull.BinaryTreeClasses
         /// <summary>
         ///     The left child node
         /// </summary>
-        public BinaryTreeNode<T> LeftNode
+        public  BinaryTreeNode<T> LeftNode
         {
             get => (BinaryTreeNode<T>) Neighbors?[0];
 
@@ -60,7 +63,7 @@ namespace Trees_Core_DotNetFull.BinaryTreeClasses
         /// <summary>
         ///     The right child node
         /// </summary>
-        public BinaryTreeNode<T> RightNode
+        public  BinaryTreeNode<T> RightNode
         {
             get => (BinaryTreeNode<T>)Neighbors?[1];
 
@@ -74,5 +77,8 @@ namespace Trees_Core_DotNetFull.BinaryTreeClasses
                 Neighbors[1] = value;
             }
         }
+
+        public int XPosition { get; set; }
+        public int YPosition { get; set; }
     }
 }

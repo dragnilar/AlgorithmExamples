@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trees_DotNetFull", "Trees_D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trees_Core_DotNetFull", "Trees_Core_DotNetFull\Trees_Core_DotNetFull.csproj", "{8D9145E8-6B79-42E1-8754-D075106D4B62}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trees_WPF", "Trees_WPF\Trees_WPF.csproj", "{80CCE47A-7CC0-439A-AFE4-859451EE0902}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8D9145E8-6B79-42E1-8754-D075106D4B62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D9145E8-6B79-42E1-8754-D075106D4B62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D9145E8-6B79-42E1-8754-D075106D4B62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80CCE47A-7CC0-439A-AFE4-859451EE0902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80CCE47A-7CC0-439A-AFE4-859451EE0902}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80CCE47A-7CC0-439A-AFE4-859451EE0902}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80CCE47A-7CC0-439A-AFE4-859451EE0902}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

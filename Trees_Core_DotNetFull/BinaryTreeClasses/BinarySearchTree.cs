@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Trees_Core_DotNetFull.BinaryTreeClasses;
 
 namespace Trees_Core_DotNetFull.BinaryTreeClasses
@@ -13,7 +14,7 @@ namespace Trees_Core_DotNetFull.BinaryTreeClasses
     /// The original source code is difficult to come by, it is recommended that you check the wayback machine here:                  
     /// https://web.archive.org/web/20070104094452if_/http://download.microsoft.com:80/download/5/0/f/50f7b985-990b-4154-ac21-518bfe16f887/DataStructures20.msi
     /// </remarks>
-    public partial class BinarySearchTree<T>
+    public partial class BinarySearchTree<T> : IEnumerable<T>
     {
         private BinaryTreeNode<T> _root;
         private IComparer<T> _comparer = Comparer<T>.Default;
@@ -42,5 +43,17 @@ namespace Trees_Core_DotNetFull.BinaryTreeClasses
             get => _root;
             set => _root = value;
         }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return GetEnumerator(TraversalMethod.Inorder);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+
     }
 }

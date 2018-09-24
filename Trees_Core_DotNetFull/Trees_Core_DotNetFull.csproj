@@ -42,11 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinaryTreeClasses\BinarySearchTree.cs" />
+    <Compile Include="BinaryTreeClasses\BinaryTreeEnumerator.cs" />
     <Compile Include="BinaryTreeClasses\BinaryTreeNode.cs" />
     <Compile Include="BinaryTreeClasses\TraversalMethod.cs" />
     <Compile Include="BinaryTreeClasses\BinarySearchTreeMethods.cs" />
     <Compile Include="BinaryTreeClasses\TreeBase\TreeNode.cs" />
     <Compile Include="BinaryTreeClasses\TreeBase\TreeNodeList.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

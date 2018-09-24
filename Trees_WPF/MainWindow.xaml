@@ -1,0 +1,25 @@
+﻿<Window x:Class="Trees_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Trees_WPF"
+        xmlns:binaryTreeClasses="clr-namespace:Trees_Core_DotNetFull.BinaryTreeClasses;assembly=Trees_Core_DotNetFull"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <ScrollViewer>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <Button VerticalAlignment="Center" Height="50" Margin="20,50,20,0" Name="ButtonClickMe">Click Me</Button>
+            </StackPanel>
+
+            <TreeView HorizontalAlignment="Stretch" Grid.Column="1" Name="TreeViewMain">
+            </TreeView>
+        </Grid>
+
+    </ScrollViewer>
+</Window>
