@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trees_WPF"
-        xmlns:binaryTreeClasses="clr-namespace:Trees_Core_DotNetFull.BinaryTreeClasses;assembly=Trees_Core_DotNetFull"
+        xmlns:classes="clr-namespace:Trees_WPF.Classes"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <ScrollViewer>
@@ -14,12 +14,27 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
-                <Button VerticalAlignment="Center" Height="50" Margin="20,50,20,0" Name="ButtonClickMe">Click Me</Button>
+                <Button VerticalAlignment="Center" Height="50" Margin="20,50,20,0" Name="ButtonCreateTree">Create Tree</Button>
+                <Button VerticalAlignment="Center" Height="50" Margin="20,50,20,0" Name="ButtonExpandAll">Expand Tree</Button>
             </StackPanel>
 
             <TreeView HorizontalAlignment="Stretch" Grid.Column="1" Name="TreeViewMain">
+                <TreeView.ItemContainerStyle>
+                    <Style TargetType="TreeViewItem">
+                        <Setter Property="IsExpanded" Value="{Binding IsExpanded}"></Setter>
+                    </Style>
+                </TreeView.ItemContainerStyle>
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate DataType="{x:Type classes:BinaryTreeDataForWPF}"
+                                              ItemsSource="{Binding SubItems}">
+                        <TextBlock Text="{Binding Path=NodeId}"></TextBlock>
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
             </TreeView>
         </Grid>
 
     </ScrollViewer>
 </Window>
+
+
+

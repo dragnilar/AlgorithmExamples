@@ -32,7 +32,7 @@ namespace Trees_Core_DotNetFull.BinaryTreeClasses
             get
             {
 
-                var nodeToVisit = new Stack<BinaryTreeNode<T>>(_nodeCount); //Per Scott Mitchel, we only need a single stacik here to maintain the correct order for processing the child nodes.
+                var nodeToVisit = new Stack<BinaryTreeNode<T>>(_nodeCount); //Per Scott Mitchel, we only need a single stack here to maintain the correct order for processing the child nodes.
                 var currentNode = _root;
                 if (currentNode != null)
                 {
