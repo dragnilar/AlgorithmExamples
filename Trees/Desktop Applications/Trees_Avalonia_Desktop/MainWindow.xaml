@@ -1,0 +1,24 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Trees With Avalonia">
+  <ScrollViewer>
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="150"></ColumnDefinition>
+        <ColumnDefinition></ColumnDefinition>
+      </Grid.ColumnDefinitions>
+      <StackPanel Grid.Column="0">
+        <Button VerticalAlignment="Center" Height="50" Margin="20,50,20,0" Name="ButtonCreateTree" Click="ButtonCreateTree_Click">Create Tree</Button>
+        <Button VerticalAlignment="Center" Height="50" Margin="20,50,20,0" Name="ButtonExpandAll">Expand Tree</Button>
+      </StackPanel>
+      <TreeView HorizontalAlignment="Stretch" Grid.Column="1" Name="TreeViewMain" Items="{Binding}">
+        <TreeView.ItemTemplate>
+          <TreeDataTemplate ItemsSource="{Binding Children}">
+            <TextBlock Text="{Binding Header}"/>
+          </TreeDataTemplate>
+        </TreeView.ItemTemplate>
+      </TreeView>
+    </Grid>
+
+  </ScrollViewer>
+</Window>

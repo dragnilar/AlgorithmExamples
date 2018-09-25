@@ -8,8 +8,6 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Trees_Core_DotNetFull.Annotations;
-using Trees_Core_DotNetFull.BinaryTreeClasses;
-using Trees_Core_DotNetFull.BinaryTreeClasses.TreeBase;
 
 namespace Trees_WPF.Classes
 {
