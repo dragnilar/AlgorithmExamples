@@ -4,7 +4,7 @@ Most of these are just me playing around with something and/or providing an exam
 <br>
 
 <br>
-<h2>Currently This Junk Pile Includes</br>
+<h2>Currently This Junk Pile Includes</h2></br>
 - Trees: A collection of playing around with tree data structures. Heavily based off of Scott Mitchel's MSDN article regarding Binary Search Trees.</br>
 
 <br>
