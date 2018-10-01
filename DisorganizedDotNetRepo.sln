@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqTests", "HorsePlay\Linq
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiscTest", "HorsePlay\MiscTest\MiscTest.csproj", "{43D65C19-FF82-4412-B193-8146AC3360B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FibonacciSpaghetti", "FibonacciSpaghetti\FibonacciSpaghetti.csproj", "{B12E9D00-C26F-4F6A-B000-61AF92E4121C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FibonacciSpaghetti", "FibonacciSpaghetti\FibonacciSpaghetti.csproj", "{B12E9D00-C26F-4F6A-B000-61AF92E4121C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -76,6 +76,7 @@ Global
 		{EA7F49AF-9864-4A3D-A73B-2AD7B0E11E8C} = {1561BBB8-167B-4F93-ACA7-DB7B44530EF9}
 		{079AC5B0-45A0-45C4-9C98-D9C741C0F1EB} = {1561BBB8-167B-4F93-ACA7-DB7B44530EF9}
 		{43D65C19-FF82-4412-B193-8146AC3360B9} = {1561BBB8-167B-4F93-ACA7-DB7B44530EF9}
+		{B12E9D00-C26F-4F6A-B000-61AF92E4121C} = {1561BBB8-167B-4F93-ACA7-DB7B44530EF9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A226D106-5197-4DBB-BC15-7A90ADC1FAF7}
