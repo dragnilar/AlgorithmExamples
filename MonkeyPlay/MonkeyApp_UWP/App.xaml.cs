@@ -4,8 +4,6 @@ using MonkeyApp_UWP.Services;
 
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
-using DevExpress.Core;
-using DevExpress.Themes.ColorKeys;
 
 namespace MonkeyApp_UWP
 {

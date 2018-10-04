@@ -7,19 +7,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    xmlns:dxGrid="using:DevExpress.UI.Xaml.Grid"
     xmlns:windowsControls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:telerikGrid="using:Telerik.UI.Xaml.Controls.Grid"
+    xmlns:telGridPrimitives="using:Telerik.UI.Xaml.Controls.Grid.Primitives"
     Name="DatagridTestPage">
-    <Page.Resources>
-        <Style x:Name="GridHeaderStyle" TargetType="dxGrid:BaseColumnHeaderControl">
-            <Setter Property="Background" Value="{ThemeResource AppBarBackgroundThemeBrush}"></Setter>
-            <Setter Property="Foreground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"></Setter>
-        </Style>
-    </Page.Resources>
     <Grid Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}"
-          Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+          Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush }">
         <Grid.RowDefinitions>
             <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition Height="40"></RowDefinition>
         </Grid.RowDefinitions>
@@ -31,29 +27,31 @@
             <ColumnDefinition Width="50"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <!--Controls-->
-        <!-- DevExpress Data Grid -->
-
-
-        <dxGrid:GridControl AutoGenerateColumns="True" Grid.Column="1" Grid.Row="1" Name="DevExpressGrid" ItemsSource="{x:Bind ViewModel.FakePersons}"
-                            AllowGrouping="True"
-                            AllowSorting="True"
-                            AllowColumnFiltering="True"
-                            ShowGroupPanel="True"
-                            ShowSearchPanelMode="Always"
-                            Background="{ThemeResource SystemControlAltLowAcrylicWindowBrush  }"
-                            Foreground="{ThemeResource SystemControlForegroundBaseHighBrush }"
-                            ColumnHeaderStyle="{StaticResource GridHeaderStyle}"
-                            >
-            
-        </dxGrid:GridControl>
-        <windowsControls:GridSplitter Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1"></windowsControls:GridSplitter>
+        <!-- Telerik Data Grid -->
+        <TextBlock Text="Telerik Rad Data Grid" Grid.Column="1" Grid.Row="1"></TextBlock>
+        <Border Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" BorderThickness="0.5" BorderBrush="{ThemeResource AppBarSeparatorForegroundThemeBrush}"></Border>
+        <telerikGrid:RadDataGrid Grid.Column="1" Grid.Row="2" AutoGenerateColumns="True"
+                                 ItemsSource="{x:Bind ViewModel.FakePersons}" Background="{ThemeResource SystemControlAcrylicWindowBrush}"
+                                 HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                                 UserFilterMode="Enabled"
+                                 GroupPanelPosition="Left"
+                                 UserEditMode="Inline"
+                                 Margin="0,20,0,0">
+        </telerikGrid:RadDataGrid>
+        <!--Splitter-->
+        <windowsControls:GridSplitter Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2"></windowsControls:GridSplitter>
         <!--windows Data Grid-->
-        <windowsControls:DataGrid Grid.Column="3" Grid.Row="1" Name="WindowsGrid" AutoGenerateColumns="True"
+        <TextBlock Text="Windows Data Grid" Grid.Column="3" Grid.Row="1"></TextBlock>
+        <Border Grid.Row="1" Grid.Column="3" VerticalAlignment="Bottom" BorderThickness="0.5" BorderBrush="{ThemeResource AppBarSeparatorForegroundThemeBrush}"></Border>
+
+        <windowsControls:DataGrid Grid.Column="3" Grid.Row="2" Name="WindowsGrid" AutoGenerateColumns="True"
                                   ItemsSource="{x:Bind ViewModel.FakePersons}"
                                   CanUserReorderColumns="True"
                                   CanUserResizeColumns="True"
-                                  CanUserSortColumns="True">
+                                  CanUserSortColumns="True"
+                                  Margin="0,20,0,0">
 
         </windowsControls:DataGrid>
     </Grid>
 </Page>
+

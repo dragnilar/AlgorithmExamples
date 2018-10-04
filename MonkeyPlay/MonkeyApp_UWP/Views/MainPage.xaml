@@ -13,6 +13,22 @@
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
             <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="75"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Text="This is the Monkey App. Currently there isn't much of anything in here..." Grid.Column="1" Grid.Row="1" FontSize="50" FontWeight="Thin"></TextBlock>
+            <TextBlock Text="Current Features:" Grid.Column="1" Grid.Row="2" FontSize="20" FontWeight="Thin" VerticalAlignment="Bottom"></TextBlock>
+            <Border Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom" BorderThickness="1" BorderBrush="White" Width="750" HorizontalAlignment="Left"></Border>
+            <TextBlock Text="Check out the Grid Test for a quick comparison of the features of the Telerik Grid vs the Windows Grid" Grid.Column="1" Grid.Row="4" FontSize="20" FontWeight="Thin"></TextBlock>
         </Grid>
     </Grid>
 </Page>
