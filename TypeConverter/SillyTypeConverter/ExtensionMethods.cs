@@ -4,6 +4,16 @@ namespace SillyTypeConverter
 {
     public static class ExtensionMethods
     {
+        public static dynamic ConvertToDestinationProperty(this object valueToConvert, object destinationObject, string propertyName)
+        {
+            var property = destinationObject.GetType().GetProperty(propertyName);
+            var method = typeof(ExtensionMethods).GetMethod("ConvertTo");
+            var genericMethod = method.MakeGenericMethod(property.PropertyType);
+            var returnValue = genericMethod.Invoke(null, new[] { valueToConvert });
+            return returnValue;
+
+        }
+
         public static T ConvertTo<T>(this object valueToConvert)
         {
             if (ValueIsNullOrEmptyString(valueToConvert))
