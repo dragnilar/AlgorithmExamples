@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq.Expressions;
+using System.Reflection;
 
 namespace SillyTypeConverter
 {
@@ -7,8 +9,7 @@ namespace SillyTypeConverter
         public static dynamic ConvertToDestinationProperty(this object valueToConvert, object destinationObject, string propertyName)
         {
             var property = destinationObject.GetType().GetProperty(propertyName);
-            var method = typeof(ExtensionMethods).GetMethod("ConvertTo");
-            var genericMethod = method.MakeGenericMethod(property.PropertyType);
+            var genericMethod = GetGenericMethodForConvertTo(property);
             var returnValue = genericMethod.Invoke(null, new[] { valueToConvert });
             return returnValue;
 
@@ -42,5 +43,14 @@ namespace SillyTypeConverter
 
             return false;
         }
+
+        private static MethodInfo GetGenericMethodForConvertTo(PropertyInfo property)
+        {
+            var method = typeof(ExtensionMethods).GetMethod(nameof(ConvertTo));
+            var genericMethod = method.MakeGenericMethod(property.PropertyType);
+            return genericMethod;
+        }
+
+
     }
 }

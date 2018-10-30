@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Bogus;
@@ -87,8 +88,6 @@ namespace NUnit.SillyTypeConverter
                 Console.WriteLine(e);
                 Assert.Fail("An exception occurred, the whole stupid test failed. (╯°□°）╯︵ ┻━┻");
             }
-
-
 
         }
 
