@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -81,6 +82,11 @@ namespace NUnit.SillyTypeConverter
                 Assert.True(testVariable.TestLong == (long)boxedLong);
                 Assert.True(testVariable.TestInt == (int)boxedInt);
                 Assert.True(testVariable.TestString == (string)boxedString);
+
+                boxedString = "I have changed";
+                Test((string)boxedString, testVariable, x=>x.TestString);
+                Assert.True(testVariable.TestString == (string)boxedString); //TODO make this its own test
+
                 Console.WriteLine("(づ｡◕‿‿◕｡)づ ALL TESTS PASSED! HOORAY! (｡◕‿‿◕｡)");
             }
             catch (Exception e)
@@ -89,6 +95,18 @@ namespace NUnit.SillyTypeConverter
                 Assert.Fail("An exception occurred, the whole stupid test failed. (╯°□°）╯︵ ┻━┻");
             }
 
+        }
+
+        
+        private static void Test<T>(object input, T target, Expression<Func<T, object>> outExpr)
+        {
+            //TODO - Move this elsewhere
+            if (input != null)
+            {
+                var expr = (MemberExpression) outExpr.Body;
+                var prop = (PropertyInfo) expr.Member;
+                prop.SetValue(target, input, null);
+            }
         }
 
         private static void ConvertBoxedVariablesUsingToDestinationProp(TestClass testVariable, object boxedBool,
