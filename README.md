@@ -6,6 +6,12 @@ Most of these are just me playing around with something and/or providing an exam
 <br>
 <h2>Currently This Junk Pile Includes</h2></br>
 - Trees: A collection of playing around with tree data structures. Heavily based off of Scott Mitchel's MSDN article regarding Binary Search Trees.</br>
+<br>
+- Horse Play: A bunch of random gobbledy gook that I made when I was bored. This includes some silly Fizz Bizz, Linq stuff and other miscelanious stuff. Nothing remarkable, to be honest.</br>
+<br>
+- Fibonacci Spaghetti: Playing around with Fibonacci sequences.</br>
+<br>
+- Type Converter: Making a generic type converter for the sake of "fun". <br>
 
 <br>
 
