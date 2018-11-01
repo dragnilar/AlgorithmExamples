@@ -1,4 +1,7 @@
-﻿using Avalonia;
+﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
+using Avalonia;
 using Avalonia.Collections;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
@@ -8,12 +11,20 @@ namespace Trees_Avalonia_Desktop
 {
     public class MainWindow : Window
     {
+        public AvaloniaList<TreeDataForAvalonia> TreeData { get; set; }
         public MainWindow()
         {
             InitializeComponent();
 #if DEBUG
             this.AttachDevTools();
 #endif
+            this.FindControl<Button>("ButtonOpenFolder").Click += delegate
+            {
+                new OpenFileDialog()
+                {
+                    Title = "Select A Folder"
+                }.ShowAsync((Window) VisualRoot);
+            };
         }
 
         private void InitializeComponent()
@@ -23,7 +34,32 @@ namespace Trees_Avalonia_Desktop
 
         public void ButtonCreateTree_Click(object s, RoutedEventArgs e)
         {
-            DataContext = SetUpTree();
+            TreeData = SetUpTree();
+            DataContext = TreeData;
+
+        }
+
+        public void ButtonOpenFile_Click(object s, RoutedEventArgs e)
+        {
+            ShowOpenFileDialog();
+
+        }
+
+        public void ButtonExpandTree_Click(object s, RoutedEventArgs e)
+        {
+            //TODO - Add ability to expand all nodes...
+        }
+
+        private async Task ShowOpenFileDialog()
+        {
+            var dialog = new OpenFileDialog();
+
+            var result = await dialog.ShowAsync().ConfigureAwait(true);
+
+            if (result.Any())
+            {
+                Console.WriteLine(result[0]);
+            }
         }
 
         private AvaloniaList<TreeDataForAvalonia> SetUpTree()
@@ -65,6 +101,7 @@ namespace Trees_Avalonia_Desktop
             public int Header { get; set; }
             public int ParentNodeId { get; set; }
             public AvaloniaList<TreeDataForAvalonia> Children { get; set; }
+            public bool IsExpanded { get; set; }
         }
     }
 }
