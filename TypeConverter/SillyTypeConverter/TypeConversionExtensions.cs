@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace SillyTypeConverter
 {
-    public static class ExtensionMethods
+    public static class TypeConversionExtensions
     {
         public static dynamic ConvertToDestinationProperty(this object valueToConvert, object destinationObject, string propertyName)
         {
@@ -46,7 +46,7 @@ namespace SillyTypeConverter
 
         private static MethodInfo GetGenericMethodForConvertTo(PropertyInfo property)
         {
-            var method = typeof(ExtensionMethods).GetMethod(nameof(ConvertTo));
+            var method = typeof(TypeConversionExtensions).GetMethod(nameof(ConvertTo));
             var genericMethod = method.MakeGenericMethod(property.PropertyType);
             return genericMethod;
         }
